@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+.abc{
+background-image:white;
+margin:0 500px  0 500px;
+text-align:center;
+
+}
+input{
+border-radius:20px;
+border-color:black;
+box-shadow:5px 5px #888888;
+}
+textarea{
+border-radius:20px;
+}
+legend{
+font-size:30px;
+}
+</style>
+</head>
+<body>
+
+<form class="abc"   onsubmit="return validation();">
+<fieldset class="xyz">
+<legend align="center" style="font-family:Comic Sans MS" >Registration Form</legend>
+Name: <input type="text" name="Name"  class="name" id = "name"><br><br>
+Mobile-no: <input type="text" class="mob" id = "mobile"><br><br>
+Email-id : <input type="text"  class ="email" id="email"><br><br>
+Password  : <input type="text" class = "pass" id="pass"><br><br>
+<input type="submit" value="Submit" name="submit"  id="btn"  >
+</fieldset>
+</form>
+<script>
+function validation(){
+	name=document.getElementById('name').value;
+	mob=document.getElementById('mobile').value;
+	email=document.getElementById('email').value;
+	pass=document.getElementById('pass').value;
+	if(name==' '){
+	     window.alert("Name is empty");
+		return false;
+	}
+	else if(name.length<=2)
+	{
+	     window.alert("Invalid Name");
+		return false;
+ 	}
+else if(email==' ')
+        {
+	window.alert("Email id is empty");
+		return false;
+         }
+	else if(email.indexOf('@')<=0){
+	      window.alert("Please fill the email id properly");
+		return false;
+                 }
+          else if(pass==' '){
+                    window.alert("Password is empty");
+		return false;
+      }
+	else if(mobile==' '||mobile.length<10){
+	      window.alert("Invalid Mobile No");
+		return false;
+	}
+else
+{
+document.write("Submission successful.");
+return true;
+}
+
+}
+
+</script>
+</body>
+</html>
